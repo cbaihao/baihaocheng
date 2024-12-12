@@ -4,6 +4,7 @@ export default function Trading() {
       <section>
         <h1 className="text-2xl font-bold mb-8">Crypto</h1>
         <div className="space-y-4">
+          <p className="text-gray-500 italic">Last updated: 2024/12/12</p>
           <p>Not financial advice. DYOR.</p>
           <p>
             I inevitably spent a lot of time looking at price chart being in

@@ -6,7 +6,6 @@ export default function Memes() {
       <section>
         <h1 className="text-2xl font-bold mb-8">Memes</h1>
         <div className="space-y-4">
-          <p className="text-gray-500 italic">Last updated: 2024/03/21</p>
           <p>I always have trouble finding a meme that I saw a while ago.</p>
           <div className="relative w-full h-[500px]">
             <Image
