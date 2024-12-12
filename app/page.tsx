@@ -58,7 +58,7 @@ export default function Home() {
             .
           </p>
 
-          <p>Fun fact: It took me 1 hour to create this website with AI.</p>
+          <p>Making this site mostly for fun.</p>
         </div>
       </section>
     </main>
