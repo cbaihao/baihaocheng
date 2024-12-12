@@ -51,6 +51,15 @@ export default function Trading() {
           </p>
           <p>
             <a
+              href="https://x.com/GCRClassic"
+              className="text-gray-600 hover:text-black underline"
+            >
+              GCR Classic
+            </a>{" "}
+            - Probably nothing.
+          </p>
+          <p>
+            <a
               href="https://www.youtube.com/@CoinBureau"
               className="text-gray-600 hover:text-black underline"
             >
