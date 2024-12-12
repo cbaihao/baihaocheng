@@ -23,6 +23,14 @@ export default function RootLayout({
             <ul className="flex justify-end gap-6 mb-12 text-[14px]">
               <li>
                 <Link
+                  href="/trading"
+                  className="text-gray-600 hover:text-black"
+                >
+                  Trading
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/"
                   className="text-gray-600 hover:text-black underline underline-offset-4"
                 >
