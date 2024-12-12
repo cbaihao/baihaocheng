@@ -32,31 +32,33 @@ export default function RootLayout({
             </ul>
           </nav>
           {children}
-          <footer className="mt-8 pt-8 border-t border-gray-200 text-[12px] text-gray-600">
+          <footer className="mt-16 pt-16 border-t border-gray-200 text-[12px] text-gray-600">
             <div className="mb-24">
               <a
                 href="https://x.com/cbaihao"
-                className="hover:text-black underline underline-offset-4"
+                className="text-gray-600 hover:text-black underline underline-offset-4"
               >
                 Twitter
               </a>
               <span className="mx-2">·</span>
               <a
                 href="https://www.linkedin.com/in/james-baihao-cheng/"
-                className="hover:text-black underline underline-offset-4"
+                className="text-gray-600 hover:text-black underline underline-offset-4"
               >
                 LinkedIn
               </a>
               <span className="mx-2">·</span>
               <a
                 href="mailto:baihaocheng98@gmail.com"
-                className="hover:text-black underline underline-offset-4"
+                className="text-gray-600 hover:text-black underline underline-offset-4"
               >
                 baihaocheng98@gmail.com
               </a>
             </div>
-            <p>CC BY-NC 4.0 2024 © Baihao Cheng.</p>
-            <p className="mt-2 text-gray-500">Created by AI.</p>
+            <div className="flex justify-between items-center text-gray-600">
+              <p>CC BY-NC 4.0 2024 © Baihao Cheng.</p>
+              <p>Created by AI.</p>
+            </div>
           </footer>
         </div>
       </body>
