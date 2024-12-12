@@ -47,21 +47,18 @@ export default function Home() {
               DECODE
             </a>
             , an annual tech conference spanning UC Berkeley and Stanford.
-            We&apos;ve hosted founders from Zoom, Databricks, Tesla, Brex, and
-            etc. I also taught a course on startup under{" "}
+            We&apos;ve hosted founders from Zoom, Databricks, Tesla, Brex, etc.
+            I also started the first DeCal on startup under{" "}
             <a
               href="https://scet.berkeley.edu/"
               className="text-gray-600 hover:text-black underline"
             >
               SCET
             </a>{" "}
-            , though looking back, I knew nothing about the subject.
+            .
           </p>
 
-          <p>
-            I&apos;m making this website because I realized AI can create one
-            for me, so why not!
-          </p>
+          <p>Fun fact: It took me 1 hour to create this website with AI.</p>
         </div>
       </section>
     </main>
