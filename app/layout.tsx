@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import Navigation from "./components/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,26 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} text-[14px]`}>
         <div className="max-w-[650px] mx-auto px-8 py-8">
-          <nav>
-            <ul className="flex justify-end gap-6 mb-12 text-[14px]">
-              <li>
-                <Link
-                  href="/trading"
-                  className="text-gray-600 hover:text-black"
-                >
-                  Trading
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-600 hover:text-black underline underline-offset-4"
-                >
-                  About
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Navigation />
           {children}
           <footer className="mt-16 pt-16 border-t border-gray-200 text-[14px] text-gray-600">
             <div className="mb-24">
