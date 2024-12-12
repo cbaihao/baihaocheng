@@ -55,7 +55,7 @@ export default function RootLayout({
                 baihaocheng98@gmail.com
               </a>
             </div>
-            <div className="flex justify-between items-center text-gray-600">
+            <div className="flex justify-between items-center text-gray-600 text-[10px]">
               <p>CC BY-NC 4.0 2024 © Baihao Cheng.</p>
               <p>Created by AI.</p>
             </div>
