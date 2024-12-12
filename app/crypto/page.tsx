@@ -4,12 +4,10 @@ export default function Trading() {
       <section>
         <h1 className="text-2xl font-bold mb-8">Crypto</h1>
         <div className="space-y-4">
-          <p className="text-gray-500 italic">Last updated: 2024/12/12</p>
           <p>Not financial advice. DYOR.</p>
           <p>
-            I inevitably spent a lot of time looking at price chart being in
-            this industry. If you want to learn about crypto trading, checkout
-            these resources:
+            I spent a lot of time looking at price chart. If you want to learn
+            about crypto trading, checkout these resources:
           </p>
           <p>
             <a
@@ -69,6 +67,7 @@ export default function Trading() {
             - It&apos;s a cliché to recommend this one, but if a project makes
             it to this channel, it&apos;s likely not a rug pull.
           </p>
+          <p className="text-gray-500 italic">Last updated: 2024/12/12</p>
         </div>
       </section>
     </main>
