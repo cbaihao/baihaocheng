@@ -6,9 +6,9 @@ export default function Trading() {
         <div className="space-y-4">
           <p>Not financial advice. DYOR.</p>
           <p>
-            Being in the crypto industry, I inevitably spent a lot of time
-            looking at price chart. If you want to learn more about crypto
-            trading, checkout these resources:
+            I inevitably spent a lot of time looking at price chart being in
+            this industry. If you want to learn more about crypto trading,
+            checkout these resources:
           </p>
           <p>
             <a
