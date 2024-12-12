@@ -2,13 +2,13 @@ export default function Trading() {
   return (
     <main>
       <section>
-        <h1 className="text-2xl font-bold mb-8">Trading</h1>
+        <h1 className="text-2xl font-bold mb-8">Crypto</h1>
         <div className="space-y-4">
           <p>Not financial advice. DYOR.</p>
           <p>
             I inevitably spent a lot of time looking at price chart being in
-            this industry. If you want to learn more about crypto trading,
-            checkout these resources:
+            this industry. If you want to learn about crypto trading, checkout
+            these resources:
           </p>
           <p>
             <a

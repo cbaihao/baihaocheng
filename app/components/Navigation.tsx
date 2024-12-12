@@ -11,12 +11,12 @@ export default function Navigation() {
       <ul className="flex justify-end gap-6 mb-12 text-[14px]">
         <li>
           <Link
-            href="/trading"
+            href="/crypto"
             className={`text-gray-600 hover:text-black ${
-              pathname === "/trading" ? "underline underline-offset-4" : ""
+              pathname === "/crypto" ? "underline underline-offset-4" : ""
             }`}
           >
-            Trading
+            Crypto
           </Link>
         </li>
         <li>
