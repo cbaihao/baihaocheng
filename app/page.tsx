@@ -48,7 +48,7 @@ export default function Home() {
             </a>
             , an annual tech conference spanning UC Berkeley and Stanford.
             We&apos;ve hosted founders from Zoom, Databricks, Tesla, Brex, etc.
-            I also started the first DeCal on startup under{" "}
+            I also taught the first startup DeCal under{" "}
             <a
               href="https://scet.berkeley.edu/"
               className="text-gray-600 hover:text-black underline"
@@ -58,7 +58,7 @@ export default function Home() {
             .
           </p>
 
-          <p>Making this site mostly for fun.</p>
+          <p>Making this website for fun.</p>
         </div>
       </section>
     </main>
