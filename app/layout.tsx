@@ -17,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-[12px]`}>
+      <body className={`${inter.className} text-[14px]`}>
         <div className="max-w-[650px] mx-auto px-8 py-8">
           <nav>
-            <ul className="flex justify-end gap-6 mb-12 text-[12px]">
+            <ul className="flex justify-end gap-6 mb-12 text-[14px]">
               <li>
                 <Link
                   href="/"
@@ -32,7 +32,7 @@ export default function RootLayout({
             </ul>
           </nav>
           {children}
-          <footer className="mt-16 pt-16 border-t border-gray-200 text-[12px] text-gray-600">
+          <footer className="mt-16 pt-16 border-t border-gray-200 text-[14px] text-gray-600">
             <div className="mb-24">
               <a
                 href="https://x.com/cbaihao"

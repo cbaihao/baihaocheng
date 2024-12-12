@@ -27,7 +27,7 @@ export default function Home() {
             >
               USDC
             </a>{" "}
-            liquidity and simplifying onramp and offramp. Prev. I was an
+            liquidity and simplifying onramp and offramp. Previously, I was an
             engineer at{" "}
             <a
               href="https://www.coinbase.com/"
@@ -35,8 +35,7 @@ export default function Home() {
             >
               Coinbase
             </a>{" "}
-            on the wallet team and product lead at Himalaya, an acq. ed-tech
-            startup.
+            on the wallet team and product lead at Himalaya (acq.).
           </p>
 
           <p>
@@ -47,16 +46,16 @@ export default function Home() {
             >
               DECODE
             </a>
-            , an annual tech conference in UC Berkeley and Stanford. We&apos;ve
-            hosted founders from Zoom, Databricks, Tesla, Brex, and etc. I also
-            taught a course on startup under{" "}
+            , an annual tech conference spanning UC Berkeley and Stanford.
+            We&apos;ve hosted founders from Zoom, Databricks, Tesla, Brex, and
+            etc. I also taught a course on startup under{" "}
             <a
               href="https://scet.berkeley.edu/"
               className="text-gray-600 hover:text-black underline"
             >
               SCET
             </a>{" "}
-            , although I knew absolutely nothing about it.
+            , though looking back, I knew nothing about the subject.
           </p>
 
           <p>
