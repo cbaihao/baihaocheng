@@ -8,8 +8,8 @@ export default function Home() {
           <p>
             Hi! I&apos;m Baihao (&quot;by-how&quot;). I am interested in
             engineering, crypto, and building useful products. I spent most of
-            my time writing codes and researching about blockchain, by which I
-            mean looking at prices chart.{" "}
+            my time writing codes and researching about blockchain, aka looking
+            at prices chart.{" "}
           </p>
 
           <p>
