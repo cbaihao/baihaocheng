@@ -6,10 +6,10 @@ export default function Home() {
 
         <div className="space-y-4">
           <p>
-            Hi! I'm Baihao ("by-how"). I am interested in engineering, crypto,
-            and building useful products. I spent most of my time writing codes
-            and researching about blockchain, by which I mean looking at prices
-            chart.{" "}
+            Hi! I&apos;m Baihao (&quot;by-how&quot;). I am interested in
+            engineering, crypto, and building useful products. I spent most of
+            my time writing codes and researching about blockchain, by which I
+            mean looking at prices chart.{" "}
           </p>
 
           <p>
@@ -47,7 +47,7 @@ export default function Home() {
             >
               DECODE
             </a>
-            , an annual tech conference in UC Berkeley and Stanford. We've
+            , an annual tech conference in UC Berkeley and Stanford. We&apos;ve
             hosted founders from Zoom, Databricks, Tesla, Brex, and etc. I also
             taught a course on startup under{" "}
             <a
@@ -60,8 +60,8 @@ export default function Home() {
           </p>
 
           <p>
-            I'm making this website because I realized AI can create one for me,
-            so why not!
+            I&apos;m making this website because I realized AI can create one
+            for me, so why not!
           </p>
         </div>
       </section>
