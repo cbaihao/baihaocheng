@@ -8,32 +8,24 @@ export default function Navigation() {
 
   return (
     <nav>
-      <ul className="flex justify-end gap-6 mb-12 text-[14px]">
+      <ul className="flex justify-end gap-6 text-[14px]">
         <li>
           <Link
-            href="/memes"
+            href="/writings"
             className={`text-gray-600 hover:text-black ${
-              pathname === "/memes" ? "underline underline-offset-4" : ""
+              pathname === "/writings" || pathname.startsWith("/writings/")
+                ? "underline underline-offset-4"
+                : ""
             }`}
           >
-            Memes
+            Notes to self
           </Link>
         </li>
         <li>
           <Link
-            href="/crypto"
+            href="/about"
             className={`text-gray-600 hover:text-black ${
-              pathname === "/crypto" ? "underline underline-offset-4" : ""
-            }`}
-          >
-            Crypto
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/"
-            className={`text-gray-600 hover:text-black ${
-              pathname === "/" ? "underline underline-offset-4" : ""
+              pathname === "/about" ? "underline underline-offset-4" : ""
             }`}
           >
             About

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "./components/Navigation";
+import ConditionalLayout from "./components/ConditionalLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,38 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} text-[14px]`}>
-        <div className="max-w-[650px] mx-auto px-8 py-8">
-          <Navigation />
-          {children}
-          <footer className="mt-16 pt-16 border-t border-gray-200 text-[14px] text-gray-600">
-            <div className="mb-24">
-              <a
-                href="https://x.com/cbaihao"
-                className="text-gray-600 hover:text-black underline underline-offset-4"
-              >
-                Twitter
-              </a>
-              <span className="mx-2">·</span>
-              <a
-                href="https://www.linkedin.com/in/james-baihao-cheng/"
-                className="text-gray-600 hover:text-black underline underline-offset-4"
-              >
-                LinkedIn
-              </a>
-              <span className="mx-2">·</span>
-              <a
-                href="mailto:baihaocheng98@gmail.com"
-                className="text-gray-600 hover:text-black underline underline-offset-4"
-              >
-                baihaocheng98@gmail.com
-              </a>
-            </div>
-            <div className="flex justify-between items-center text-gray-600 text-[10px]">
-              <p>CC BY-NC 4.0 2024 © Baihao Cheng.</p>
-              <p>Created by AI.</p>
-            </div>
-          </footer>
-        </div>
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );
