@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Sample article data - in a real app, this would come from a CMS or database
@@ -79,8 +81,9 @@ const articles = {
   },
 };
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const article = articles[params.slug as keyof typeof articles];
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { slug } = await params;
+  const article = articles[slug as keyof typeof articles];
 
   if (!article) {
     return (
@@ -88,12 +91,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <section>
           <h1 className="text-2xl font-bold mb-8">Article Not Found</h1>
           <p>The article you&apos;re looking for doesn&apos;t exist.</p>
-          <a
+          <Link
             href="/writings"
             className="text-gray-600 hover:text-black underline"
           >
             ← Back to Writing
-          </a>
+          </Link>
         </section>
       </main>
     );
@@ -103,12 +106,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     <main>
       <section>
         <div className="mb-8">
-          <a
+          <Link
             href="/writings"
             className="text-gray-600 hover:text-black underline text-sm"
           >
             ← Back to Writing
-          </a>
+          </Link>
         </div>
 
         <article>

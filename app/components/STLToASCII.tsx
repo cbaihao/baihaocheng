@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js";
@@ -23,6 +23,9 @@ export default function STLToASCII() {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    // Capture the current mount element for cleanup
+    const currentMount = mountRef.current;
+
     // Initialize Three.js components
     initializeThreeJS();
     loadDefaultSTL();
@@ -31,13 +34,14 @@ export default function STLToASCII() {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
-      if (effectRef.current && mountRef.current) {
-        mountRef.current.removeChild(effectRef.current.domElement);
+      if (effectRef.current && currentMount) {
+        currentMount.removeChild(effectRef.current.domElement);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const initializeThreeJS = () => {
+  const initializeThreeJS = useCallback(() => {
     // Clock
     clockRef.current = new THREE.Clock();
 
@@ -79,7 +83,7 @@ export default function STLToASCII() {
 
     // Handle window resize
     window.addEventListener("resize", onWindowResize);
-  };
+  }, []);
 
   const createEffect = () => {
     if (!rendererRef.current) return;
