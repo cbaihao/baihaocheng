@@ -105,15 +105,6 @@ export default function ContributionTracker() {
     }
   };
 
-  const formatDate = (dateStr: string): string => {
-    return new Date(dateStr).toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
   const formatTooltipDate = (dateStr: string): string => {
     const date = new Date(dateStr);
     const month = date.toLocaleDateString("en-US", { month: "long" });
@@ -138,7 +129,6 @@ export default function ContributionTracker() {
   };
 
   const handleMouseEnter = (event: React.MouseEvent, day: ContributionDay) => {
-    const rect = event.currentTarget.getBoundingClientRect();
     const count = day.count;
     const dateStr = formatTooltipDate(day.date);
     const content = `${count} contribution${
@@ -147,8 +137,8 @@ export default function ContributionTracker() {
 
     setTooltip({
       show: true,
-      x: rect.left + rect.width / 2,
-      y: rect.top - 10,
+      x: event.clientX,
+      y: event.clientY - 40,
       content,
     });
   };
@@ -287,7 +277,7 @@ export default function ContributionTracker() {
                 <div
                   key={`${month.weekIndex}-${month.label}`}
                   className="absolute"
-                  style={{ left: `${month.weekIndex * 16}px` }}
+                  style={{ left: `${month.weekIndex * 14}px` }}
                 >
                   {month.label}
                 </div>
@@ -298,7 +288,7 @@ export default function ContributionTracker() {
               {/* Day labels */}
               <div
                 className="flex flex-col text-xs text-gray-600 mr-2 justify-around"
-                style={{ height: "91px" }}
+                style={{ height: "76px" }}
               >
                 <div>Mon</div>
                 <div>Wed</div>
@@ -312,7 +302,7 @@ export default function ContributionTracker() {
                     {week.map((day, dayIndex) => (
                       <div
                         key={`${day.date}-${dayIndex}`}
-                        className={`w-3 h-3 rounded-sm ${getColorClass(
+                        className={`w-2.5 h-2.5 rounded-sm ${getColorClass(
                           day.level
                         )} hover:ring-2 hover:ring-gray-300 cursor-pointer transition-all`}
                         onMouseEnter={(e) => handleMouseEnter(e, day)}
@@ -333,13 +323,27 @@ export default function ContributionTracker() {
             {[0, 1, 2, 3, 4].map((level) => (
               <div
                 key={level}
-                className={`w-3 h-3 rounded-sm ${getColorClass(level)}`}
+                className={`w-2.5 h-2.5 rounded-sm ${getColorClass(level)}`}
               />
             ))}
           </div>
           <span>More</span>
         </div>
       </div>
+
+      {/* Custom Tooltip */}
+      {tooltip.show && (
+        <div
+          className="fixed z-50 px-2 py-1 text-xs text-white bg-black rounded shadow-md pointer-events-none"
+          style={{
+            left: `${tooltip.x}px`,
+            top: `${tooltip.y}px`,
+            transform: "translateX(-50%)",
+          }}
+        >
+          {tooltip.content}
+        </div>
+      )}
     </div>
   );
 }
