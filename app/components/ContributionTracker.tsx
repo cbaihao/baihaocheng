@@ -17,6 +17,13 @@ interface ContributionData {
 export default function ContributionTracker() {
   const [contributions, setContributions] = useState<ContributionDay[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const [tooltip, setTooltip] = useState<{
+    show: boolean;
+    x: number;
+    y: number;
+    content: string;
+  }>({ show: false, x: 0, y: 0, content: "" });
 
   useEffect(() => {
     const loadContributions = async () => {
@@ -25,33 +32,38 @@ export default function ContributionTracker() {
         const data: ContributionData = await response.json();
 
         const processedData: ContributionDay[] = [];
-        const today = new Date();
-        const currentYear = today.getFullYear().toString();
-        const yearData = data[currentYear] || {};
+        const yearData = data[selectedYear.toString()] || {};
 
-        // Generate last 365 days
-        for (let i = 364; i >= 0; i--) {
-          const date = new Date(today);
-          date.setDate(date.getDate() - i);
-          const dateStr = date.toISOString().split("T")[0];
+        // Generate full year (52 weeks starting from first Sunday of year)
+        const startOfYear = new Date(selectedYear, 0, 1);
+        const firstSunday = new Date(startOfYear);
+        const dayOfWeek = startOfYear.getDay();
+        firstSunday.setDate(startOfYear.getDate() - dayOfWeek);
 
-          const count = yearData[dateStr] || 0;
-          const level =
-            count === 0
-              ? 0
-              : count <= 2
-              ? 1
-              : count <= 4
-              ? 2
-              : count <= 6
-              ? 3
-              : 4;
+        for (let week = 0; week < 52; week++) {
+          for (let day = 0; day < 7; day++) {
+            const currentDate = new Date(firstSunday);
+            currentDate.setDate(firstSunday.getDate() + week * 7 + day);
+            const dateStr = currentDate.toISOString().split("T")[0];
 
-          processedData.push({
-            date: dateStr,
-            count,
-            level,
-          });
+            const count = yearData[dateStr] || 0;
+            const level =
+              count === 0
+                ? 0
+                : count <= 2
+                ? 1
+                : count <= 4
+                ? 2
+                : count <= 6
+                ? 3
+                : 4;
+
+            processedData.push({
+              date: dateStr,
+              count,
+              level,
+            });
+          }
         }
 
         setContributions(processedData);
@@ -63,7 +75,7 @@ export default function ContributionTracker() {
     };
 
     loadContributions();
-  }, []);
+  }, [selectedYear]);
 
   if (loading) {
     return (
@@ -100,6 +112,49 @@ export default function ContributionTracker() {
       month: "long",
       day: "numeric",
     });
+  };
+
+  const formatTooltipDate = (dateStr: string): string => {
+    const date = new Date(dateStr);
+    const month = date.toLocaleDateString("en-US", { month: "long" });
+    const day = date.getDate();
+
+    // Add ordinal suffix (1st, 2nd, 3rd, etc.)
+    const getOrdinalSuffix = (day: number): string => {
+      if (day >= 11 && day <= 13) return "th";
+      switch (day % 10) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    };
+
+    return `${month} ${day}${getOrdinalSuffix(day)}`;
+  };
+
+  const handleMouseEnter = (event: React.MouseEvent, day: ContributionDay) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const count = day.count;
+    const dateStr = formatTooltipDate(day.date);
+    const content = `${count} contribution${
+      count !== 1 ? "s" : ""
+    } on ${dateStr}`;
+
+    setTooltip({
+      show: true,
+      x: rect.left + rect.width / 2,
+      y: rect.top - 10,
+      content,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ show: false, x: 0, y: 0, content: "" });
   };
 
   // Group contributions by weeks starting from Sunday
@@ -146,98 +201,144 @@ export default function ContributionTracker() {
     (sum, day) => sum + day.count,
     0
   );
-  const currentYear = new Date().getFullYear();
 
-  // Generate month labels
-  const getMonthLabels = () => {
-    const months = [];
-    const today = new Date();
+  const availableYears = [2024, 2025]; // Add years as you add data
 
-    for (let i = 11; i >= 0; i--) {
-      const date = new Date(today);
-      date.setMonth(date.getMonth() - i);
-      months.push(date.toLocaleDateString("en-US", { month: "short" }));
-    }
+  // Generate month labels for the selected year (Jan-Dec)
+  const getMonthLabels = (): Array<{ weekIndex: number; label: string }> => {
+    const monthLabels: Array<{ weekIndex: number; label: string }> = [];
 
-    return months;
+    // Calculate approximate week positions for each month
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    monthNames.forEach((monthName, monthIndex) => {
+      // More accurate week calculation based on actual month positions
+      const monthStart = new Date(selectedYear, monthIndex, 1);
+      const yearStart = new Date(selectedYear, 0, 1);
+      const firstSunday = new Date(yearStart);
+      firstSunday.setDate(yearStart.getDate() - yearStart.getDay());
+
+      const daysDiff = Math.floor(
+        (monthStart.getTime() - firstSunday.getTime()) / (1000 * 60 * 60 * 24)
+      );
+      const weekIndex = Math.floor(daysDiff / 7);
+
+      if (weekIndex >= 0 && weekIndex < 52) {
+        monthLabels.push({
+          weekIndex,
+          label: monthName,
+        });
+      }
+    });
+
+    return monthLabels;
   };
 
   const monthLabels = getMonthLabels();
 
   return (
-    <div className="bg-white p-6 rounded-lg border border-gray-200">
-      <div className="mb-4">
-        <h3 className="text-lg font-medium text-gray-900">
-          {totalContributions} contributions in the last year
-        </h3>
+    <div className="space-y-4">
+      {/* Year Selector */}
+      <div className="flex justify-end">
+        <div className="flex gap-2">
+          {availableYears.map((year) => (
+            <button
+              key={year}
+              onClick={() => setSelectedYear(year)}
+              className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                selectedYear === year
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {year}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Contribution Grid with month labels and year */}
-      <div className="overflow-x-auto">
-        <div className="relative">
-          {/* Month labels */}
-          <div className="flex mb-2 text-xs text-gray-600 ml-8">
-            {monthLabels.map((month, index) => (
-              <div
-                key={month}
-                className="flex-1 text-left"
-                style={{ minWidth: "26px" }}
-              >
-                {index % 3 === 0 ? month : ""}
-              </div>
-            ))}
-          </div>
+      {/* Contribution Tracker */}
+      <div className="bg-white p-6 rounded-lg border border-gray-200">
+        <div className="mb-4">
+          <h3 className="text-lg font-medium text-gray-900">
+            {totalContributions} contributions in {selectedYear}
+          </h3>
+        </div>
 
-          <div className="flex">
-            {/* Day labels */}
-            <div
-              className="flex flex-col text-xs text-gray-600 mr-2 justify-around"
-              style={{ height: "91px" }}
-            >
-              <div>Mon</div>
-              <div>Wed</div>
-              <div>Fri</div>
-            </div>
-
-            {/* Grid */}
-            <div className="grid grid-flow-col gap-1 min-w-max">
-              {weeklyData.slice(0, 52).map((week, weekIndex) => (
-                <div key={weekIndex} className="grid grid-rows-7 gap-1">
-                  {week.map((day, dayIndex) => (
-                    <div
-                      key={`${day.date}-${dayIndex}`}
-                      className={`w-3 h-3 rounded-sm ${getColorClass(
-                        day.level
-                      )} hover:ring-2 hover:ring-gray-300 cursor-pointer transition-all`}
-                      title={`${formatDate(day.date)}: ${
-                        day.count
-                      } contributions`}
-                    />
-                  ))}
+        {/* Contribution Grid with month labels */}
+        <div className="overflow-x-auto">
+          <div className="relative">
+            {/* Month labels */}
+            <div className="relative mb-2 text-xs text-gray-600 ml-8 h-4">
+              {monthLabels.map((month) => (
+                <div
+                  key={`${month.weekIndex}-${month.label}`}
+                  className="absolute"
+                  style={{ left: `${month.weekIndex * 16}px` }}
+                >
+                  {month.label}
                 </div>
               ))}
             </div>
 
-            {/* Year label */}
-            <div className="ml-4 text-sm text-gray-600 flex items-center">
-              {currentYear}
+            <div className="flex">
+              {/* Day labels */}
+              <div
+                className="flex flex-col text-xs text-gray-600 mr-2 justify-around"
+                style={{ height: "91px" }}
+              >
+                <div>Mon</div>
+                <div>Wed</div>
+                <div>Fri</div>
+              </div>
+
+              {/* Grid */}
+              <div className="grid grid-flow-col gap-1 min-w-max">
+                {weeklyData.slice(0, 52).map((week, weekIndex) => (
+                  <div key={weekIndex} className="grid grid-rows-7 gap-1">
+                    {week.map((day, dayIndex) => (
+                      <div
+                        key={`${day.date}-${dayIndex}`}
+                        className={`w-3 h-3 rounded-sm ${getColorClass(
+                          day.level
+                        )} hover:ring-2 hover:ring-gray-300 cursor-pointer transition-all`}
+                        onMouseEnter={(e) => handleMouseEnter(e, day)}
+                        onMouseLeave={handleMouseLeave}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Legend */}
-      <div className="flex items-center justify-between mt-4 text-xs text-gray-600">
-        <span>Less</span>
-        <div className="flex gap-1">
-          {[0, 1, 2, 3, 4].map((level) => (
-            <div
-              key={level}
-              className={`w-3 h-3 rounded-sm ${getColorClass(level)}`}
-            />
-          ))}
+        {/* Legend */}
+        <div className="flex items-center justify-between mt-4 text-xs text-gray-600">
+          <span>Less</span>
+          <div className="flex gap-1">
+            {[0, 1, 2, 3, 4].map((level) => (
+              <div
+                key={level}
+                className={`w-3 h-3 rounded-sm ${getColorClass(level)}`}
+              />
+            ))}
+          </div>
+          <span>More</span>
         </div>
-        <span>More</span>
       </div>
     </div>
   );
