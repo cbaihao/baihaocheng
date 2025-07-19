@@ -11,6 +11,16 @@ export default function Navigation() {
       <ul className="flex justify-end gap-6 text-[14px]">
         <li>
           <Link
+            href="/ideas"
+            className={`text-gray-600 hover:text-black ${
+              pathname === "/ideas" ? "underline underline-offset-4" : ""
+            }`}
+          >
+            Ideas
+          </Link>
+        </li>
+        <li>
+          <Link
             href="/writings"
             className={`text-gray-600 hover:text-black ${
               pathname === "/writings" || pathname.startsWith("/writings/")
