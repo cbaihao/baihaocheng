@@ -192,7 +192,7 @@ export default function ContributionTracker() {
     0
   );
 
-  const availableYears = [2024, 2025]; // Add years as you add data
+  const availableYears = [2025, 2024]; // Add years as you add data
 
   // Generate month labels for the selected year (Jan-Dec)
   const getMonthLabels = (): Array<{ weekIndex: number; label: string }> => {
@@ -240,28 +240,9 @@ export default function ContributionTracker() {
   const monthLabels = getMonthLabels();
 
   return (
-    <div className="space-y-4">
-      {/* Year Selector */}
-      <div className="flex justify-end">
-        <div className="flex gap-2">
-          {availableYears.map((year) => (
-            <button
-              key={year}
-              onClick={() => setSelectedYear(year)}
-              className={`px-3 py-1 text-sm rounded-md transition-colors ${
-                selectedYear === year
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              {year}
-            </button>
-          ))}
-        </div>
-      </div>
-
+    <div className="flex gap-4 items-start">
       {/* Contribution Tracker */}
-      <div className="bg-white p-6 rounded-lg border border-gray-200">
+      <div className="bg-white p-6 rounded-lg border border-gray-200 flex-1">
         <div className="mb-4">
           <h3 className="text-lg font-medium text-gray-900">
             {totalContributions} contributions in {selectedYear}
@@ -287,12 +268,12 @@ export default function ContributionTracker() {
             <div className="flex">
               {/* Day labels */}
               <div
-                className="flex flex-col text-xs text-gray-600 mr-2 justify-around"
+                className="flex flex-col text-xs text-gray-600 mr-2 justify-between"
                 style={{ height: "76px" }}
               >
-                <div>Mon</div>
-                <div>Wed</div>
-                <div>Fri</div>
+                <div style={{ paddingTop: "2px" }}>Mon</div>
+                <div style={{ paddingTop: "2px" }}>Wed</div>
+                <div style={{ paddingTop: "2px" }}>Fri</div>
               </div>
 
               {/* Grid */}
@@ -329,6 +310,23 @@ export default function ContributionTracker() {
           </div>
           <span>More</span>
         </div>
+      </div>
+
+      {/* Year Selector */}
+      <div className="flex flex-col gap-3">
+        {availableYears.map((year) => (
+          <button
+            key={year}
+            onClick={() => setSelectedYear(year)}
+            className={`px-6 py-3 text-sm font-medium transition-all duration-300 ease-in-out rounded-lg ${
+              selectedYear === year
+                ? "bg-blue-600 text-white shadow-md"
+                : "bg-gray-100 text-gray-700 hover:text-black hover:bg-gray-200"
+            }`}
+          >
+            {year}
+          </button>
+        ))}
       </div>
 
       {/* Custom Tooltip */}

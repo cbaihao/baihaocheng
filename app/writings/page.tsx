@@ -3,6 +3,11 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
+      title: "Embody What You Seek",
+      date: "July 2025",
+      slug: "embody-what-you-seek",
+    },
+    {
       title: "The opposite of hindsight",
       date: "July 2025",
       slug: "the-opposite-of-hindsight",
@@ -15,7 +20,7 @@ export default function Writings() {
   ];
 
   return (
-    <PageLayout title="Notes to self">
+    <PageLayout title="Drafts">
       <ul className="space-y-2 list-none">
         {articles.map((article) => (
           <li key={article.slug} className="flex items-start">

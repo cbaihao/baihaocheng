@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import PageLayout from "../components/PageLayout";
-import ContributionTracker from "../components/ContributionTracker";
 
 interface Idea {
   id: string;
@@ -31,42 +30,32 @@ export default function Ideas() {
 
   return (
     <PageLayout title="Ideas">
-      <div className="space-y-8">
-        <ul className="space-y-2 list-none">
-          {ideas.map((idea) => (
-            <li key={idea.id}>
-              <div className="flex items-start">
-                <span
-                  className={`text-gray-600 mr-2 inline-block transition-transform duration-500 ease-in-out ${
-                    expandedId === idea.id ? "rotate-90" : "rotate-0"
-                  }`}
-                >
-                  {expandedId === idea.id ? "+" : "–"}
-                </span>
-                <button
-                  onClick={() => toggleExpanded(idea.id)}
-                  className="text-gray-600 hover:text-black underline text-left focus:outline-none"
-                >
-                  {idea.title} - {idea.date}
-                </button>
+      <ul className="space-y-2 list-none">
+        {ideas.map((idea) => (
+          <li key={idea.id}>
+            <div className="flex items-start">
+              <span
+                className={`text-gray-600 mr-2 inline-block transition-transform duration-500 ease-in-out ${
+                  expandedId === idea.id ? "rotate-90" : "rotate-0"
+                }`}
+              >
+                {expandedId === idea.id ? "+" : "–"}
+              </span>
+              <button
+                onClick={() => toggleExpanded(idea.id)}
+                className="text-gray-600 hover:text-black underline text-left focus:outline-none"
+              >
+                {idea.title} - {idea.date}
+              </button>
+            </div>
+            {expandedId === idea.id && (
+              <div className="ml-6 mt-4 mb-4 text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                {idea.description}
               </div>
-              {expandedId === idea.id && (
-                <div className="ml-6 mt-4 mb-4 text-gray-600 text-sm leading-relaxed whitespace-pre-line">
-                  {idea.description}
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        {/* GitHub-style Progress Tracker */}
-        <div>
-          <h2 className="text-xl font-medium text-gray-900 mb-4">
-            Progress Tracker
-          </h2>
-          <ContributionTracker />
-        </div>
-      </div>
+            )}
+          </li>
+        ))}
+      </ul>
     </PageLayout>
   );
 }
