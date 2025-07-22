@@ -3,7 +3,7 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
-      title: "Embody What You Seek",
+      title: "Wanting, Being, and the Paradox",
       date: "July 2025",
       slug: "embody-what-you-seek",
     },
