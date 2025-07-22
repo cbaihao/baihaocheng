@@ -38,7 +38,7 @@ export default function About() {
       </p>
 
       <p>
-        My entrepreneurial spirit started early: I co-founded{" "}
+        During college, I co-founded{" "}
         <a
           href="https://decode.build/"
           className="text-gray-600 hover:text-black underline"
