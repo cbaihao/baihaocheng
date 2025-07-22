@@ -32,9 +32,9 @@ export default function EmbodyWhatYouSeek() {
 
           <p>
             This is not suggesting we should not want anything. The desire is
-            the initial spark, the recognition of what's missing or what could
-            be. Without that initial wanting, there's no direction, no energy to
-            begin.
+            the initial spark, the recognition of what&apos;s missing or what
+            could be. Without that initial wanting, there&apos;s no direction,
+            no energy to begin.
           </p>
 
           <p>
@@ -42,23 +42,23 @@ export default function EmbodyWhatYouSeek() {
             discipline and wisdom to position their mind a certain way.
           </p>
 
-          <p>Here's the mental shift.</p>
+          <p>Here&apos;s the mental shift.</p>
 
           <p>
-            Wanting often carries desperation, scarcity, a sense that you don't
-            have it. Being suggests you already contain what you seek. Wanting
-            places the desired thing outside yourself, making you dependent on
-            circumstances. Being makes you the source.
+            Wanting often carries desperation, scarcity, a sense that you
+            don&apos;t have it. Being suggests you already contain what you
+            seek. Wanting places the desired thing outside yourself, making you
+            dependent on circumstances. Being makes you the source.
           </p>
 
           <p>
-            Wanting projects into a future where you'll have it. Being brings
-            that quality into the present moment.
+            Wanting projects into a future where you&apos;ll have it. Being
+            brings that quality into the present moment.
           </p>
 
           <p>
-            But don't we need to set goal? Isn't goal setting a 'want' in
-            disguise.
+            But don&apos;t we need to set goal? Isn&apos;t goal setting a
+            &apos;want&apos; in disguise.
           </p>
 
           <p>
@@ -68,20 +68,20 @@ export default function EmbodyWhatYouSeek() {
 
           <ul className="list-disc ml-6 space-y-2">
             <li>
-              Wanting-based goal setting: "I want X" → desperately seeking X →
-              emphasise lack
+              Wanting-based goal setting: &quot;I want X&quot; → desperately
+              seeking X → emphasise lack
             </li>
             <li>
-              Being-based goal setting: "I am someone who..." → what would that
-              person do? → natural action
+              Being-based goal setting: &quot;I am someone who...&quot; → what
+              would that person do? → natural action
             </li>
           </ul>
 
           <p>
             The goal becomes the expression of your being rather than the object
-            of your wanting. You're not setting goals to GET something, you're
-            setting goals to EXPRESS what you already are. And that's a more
-            effective goal.
+            of your wanting. You&apos;re not setting goals to GET something,
+            you&apos;re setting goals to EXPRESS what you already are. And
+            that&apos;s a more effective goal.
           </p>
 
           <p>
@@ -96,16 +96,16 @@ export default function EmbodyWhatYouSeek() {
 
           <p>
             Felix Dennis would say ownership is largely an illusion. What we
-            call "owning" is just temporary stewardship of resources. Even
-            that's a tiny subset of what exists. Also, we spend 99% of our time
-            in states of being, not moments of having.
+            call &quot;owning&quot; is just temporary stewardship of resources.
+            Even that&apos;s a tiny subset of what exists. Also, we spend 99% of
+            our time in states of being, not moments of having.
           </p>
 
           <p>
             Being, on the other hand, seems to be the constant thread. The
             awareness that experiences having, the consciousness that witnesses
-            ownership coming and going - that's what persists through all the
-            changes.
+            ownership coming and going - that&apos;s what persists through all
+            the changes.
           </p>
 
           <p>
@@ -125,13 +125,14 @@ export default function EmbodyWhatYouSeek() {
 
           <p>
             The practical paradox is, when you focus on being, you often end up
-            with more effective stewardship of resources. It's like having
+            with more effective stewardship of resources. It&apos;s like having
             becomes a byproduct of being rather than a goal in itself.
           </p>
 
           <p>
-            If there's one line that captures this theme, it'd be the title of
-            one of my favorite book: the score will take care of itself.
+            If there&apos;s one line that captures this theme, it&apos;d be the
+            title of one of my favorite book: the score will take care of
+            itself.
           </p>
         </div>
 
