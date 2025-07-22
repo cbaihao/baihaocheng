@@ -16,7 +16,7 @@ export default function Navigation() {
               pathname === "/progress" ? "underline underline-offset-4" : ""
             }`}
           >
-            Progress
+            Projects
           </Link>
         </li>
         <li>
