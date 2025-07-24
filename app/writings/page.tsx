@@ -3,18 +3,23 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
+      title: "Accumulating Time",
+      date: "July 24, 2025",
+      slug: "accumulating-time",
+    },
+    {
       title: "Wanting, Being, and the Paradox",
-      date: "July 2025",
+      date: "July 22, 2025",
       slug: "embody-what-you-seek",
     },
     {
       title: "The opposite of hindsight",
-      date: "July 2025",
+      date: "July 14, 2025",
       slug: "the-opposite-of-hindsight",
     },
     {
       title: "History is made by those who failed well",
-      date: "June 2025",
+      date: "June 30, 2025",
       slug: "history-is-made-by-those-who-failed-well",
     },
   ];

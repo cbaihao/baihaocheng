@@ -1,13 +1,13 @@
 import PageLayout from "../../components/PageLayout";
 import { getArticleContent } from "../../../lib/content";
 
-export default function EmbodyWhatYouSeek() {
-  const content = getArticleContent("wanting-being-paradox.txt");
+export default function AccumulatingTime() {
+  const content = getArticleContent("accumulating-time.txt");
 
   return (
-    <PageLayout title="Wanting, Being, and the Paradox">
+    <PageLayout title="Accumulating Time">
       <div className="prose prose-gray max-w-none">
-        <div className="text-gray-600 text-sm mb-8">July 22, 2025</div>
+        <div className="text-gray-600 text-sm mb-8">July 24, 2025</div>
         <div className="text-gray-700 leading-relaxed space-y-6">
           {content.map((section, index) => {
             if (section.type === "paragraph") {
