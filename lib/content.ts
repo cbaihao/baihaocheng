@@ -11,7 +11,15 @@ export interface BulletListSection {
   items: string[];
 }
 
-export type ContentSection = ParagraphSection | BulletListSection;
+export interface SubtitleSection {
+  type: "subtitle";
+  content: string;
+}
+
+export type ContentSection =
+  | ParagraphSection
+  | BulletListSection
+  | SubtitleSection;
 
 export function getArticleContent(filename: string): ContentSection[] {
   const filePath = path.join(process.cwd(), "content", filename);
@@ -32,6 +40,16 @@ function parseContent(content: string): ContentSection[] {
       return {
         type: "bulletlist" as const,
         items: bulletItems.map(escapeHtml),
+      };
+    } else if (section.startsWith("SUBTITLE:")) {
+      const subtitle = section
+        .replace("SUBTITLE:", "")
+        .replace(/^\s+/, "")
+        .replace(/^\n/, "")
+        .trim();
+      return {
+        type: "subtitle" as const,
+        content: escapeHtml(subtitle),
       };
     } else {
       return {
