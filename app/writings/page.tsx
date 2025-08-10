@@ -3,6 +3,11 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
+      title: "AI token arbitrage",
+      date: "August 10, 2025",
+      slug: "ai-token-arbitrage",
+    },
+    {
       title: "Accumulating Time",
       date: "July 24, 2025",
       slug: "accumulating-time",

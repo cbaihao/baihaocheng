@@ -1,0 +1,46 @@
+AI token arbitrage exists where the value of AI output exceeds the cost of tokens used to generate it.
+
+This opens up a wide design space. AI can output code, text, images, and more.
+
+SUBTITLE: The opportunity
+
+To capture this arbitrage, your product needs to create more value than vanilla GPT output. The value you can capture is the delta between your product's generated value and what vanilla GPT provides. Several dimensions create this delta:
+
+BULLETLIST:
+- Data for the problem and a way to provide context to the model
+- Better medium/user experience for the particular use case
+- Prompt engineering and iteration
+- Finding unique and valuable problems
+- Market inefficiency in certain distribution channels
+
+There's a narrow window where AI capability has exploded but market pricing and awareness haven't caught up. The real opportunity is being early to recognize which specific AI capabilities are underpriced relative to the value they unlock.
+
+SUBTITLE: Value captured
+
+I can think of two ways to capture this value:
+
+1. Cost replacement — Use AI to automate a service you're already paying for. The most debated example: AI can replace existing software engineering capacity at a fraction of the cost. Since companies already pay $200k for a software engineer, AI reduces that cost directly.
+
+More broadly, if someone is paying for your work and you can automate parts of it with AI, the increased effectiveness in your output reflects captured value — you can do more work in the same time or deliver better results for the same price.
+
+2. Product-based capture — Value captured through a digital product where users pay fees directly. This usually doesn't have diminishing marginal returns — each additional user costs you almost nothing to serve, but pays the same price.
+
+You also leverage AI's coding capacity to build the product itself. Unlike one-time deliverables, the AI output becomes part of a persistent asset that compounds over time. Each AI-generated feature, interface, or algorithm stays in the product, gets refined, and continues creating value for every new user. You're not just using AI for individual tasks — you're accumulating AI-generated capabilities into something that grows more valuable with each iteration.
+
+This creates a double arbitrage: AI helps you build the product cheaper and faster, while the product itself captures ongoing value from the AI capabilities embedded within it. The same AI output that might be worth $X as a one-time service becomes worth much more when it's packaged into a product that serves hundreds or thousands of users.
+
+SUBTITLE: The commoditization risk
+
+If AI makes it easier for everyone to build, it also makes any specific solution easier to replicate. This commoditizes products that rely purely on execution or features that can be copied.
+
+AI also raises the quality bar across the board. What used to be impressive — a clean interface, fast performance, basic AI integration — becomes table stakes. Users quickly adapt their expectations upward, so yesterday's competitive advantage becomes today's minimum viable product.
+
+This creates a trap: you might build something valuable using AI, only to find competitors can replicate it in weeks rather than months. The arbitrage window shrinks faster than expected because the same tools that gave you an advantage are available to everyone else.
+
+The sustainable opportunities likely come from elements that don't commoditize easily:
+
+BULLETLIST:
+- Proprietary data that improves over time
+- Unique distribution channels or network effects
+- Domain expertise that's hard to replicate
+- Trust and relationships built with specific user groups 
