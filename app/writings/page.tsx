@@ -3,6 +3,11 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
+      title: "The Math behind Bitcoin Dollar Cost Averaging",
+      date: "October 2025",
+      slug: "bitcoin-dca",
+    },
+    {
       title: "AI token arbitrage",
       date: "August 10, 2025",
       slug: "ai-token-arbitrage",

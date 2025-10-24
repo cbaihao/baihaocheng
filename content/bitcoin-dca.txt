@@ -1,0 +1,67 @@
+Bitcoin DCA (Dollar-cost-averaging) in a bear market resembles martingale betting, except the odds are skewed favorably at every level.
+
+SUBTITLE: Martingale Strategy
+
+The martingale strategy involves doubling down after each loss until you eventually win and break even. It works in theory, assuming unlimited capital. In practice, you're betting 50/50 odds with symmetric payoffs—risk $1 to make $1. The strategy barely returns you to breakeven because the game is fair.
+
+Here's an example to illustrate how martingale strategy works
+
+BULLETLIST:
+- Round 1: put $1. You lose. Profit: $-1
+- Round 2: put $2 (doubling down). You lose. Profit: $-3
+- Round 3: put $4. You lose. Profit: $-7
+- Round 4: put $8. You lose. Profit: $-15
+- Round 5: put $16. You win. Profit: $1
+
+Let's break down the parameters in the Martingale example.
+
+BULLETLIST:
+- Winning rate: 50%
+- Penalty for losing: 100% (you lost what you put down that round)
+- Reward for winning: 100% (you double what you put down)
+
+SUBTITLE: What does this have to do with DCA?
+
+DCA into bitcoin during a bear market is essentially martingale bettering with the parameters change:
+
+Win rate: Above 50%. Oversold assets tend to mean-revert. The lower the price falls, the higher the probability of a bounce. A loss this month (price drops) increases next month's win probability.
+
+Downside: 20-40% in typical bear market drawdowns. The initial -60% drop from bull market peak has already occurred.
+
+Upside: 650% in the 2022-2024 cycle ($16k to $120k). But in practice, you wouldn't know exactly how much this upside is.
+
+The critical difference: you don't lose your bitcoin when price drops. In traditional martingale, losses remove capital from the table. Here, dropping prices mean accumulation at a lower cost basis. When prices recover, all previous purchases appreciate.
+
+In essence, by taking DCA as a strategy to accumulate bitcoin, your downside is protected with a Martingale system with better odds. And you're exposed to the asymmetric upside.
+
+SUBTITLE: The Assumption
+
+One assumption holds the strategy together: bitcoin trades higher at the end of your DCA window. In a bear market, along with fundamentals, several conditions support this:
+
+BULLETLIST:
+- Mean reversion in speculative assets
+- Improving macro conditions increasing liquidity to risk assets
+- Continued adoption
+- Bitcoin capturing majority crypto inflows via Pareto distribution
+
+Bear markets align these factors. Asset selection matters—ETH performed significantly worse than bitcoin this past cycle. Bitcoin tends to capture disproportionate inflows over extended periods.
+
+SUBTITLE: Bull Markets
+
+Starting DCA in a bull market inverts the math. The primary risk becomes abandoning the strategy during drawdowns rather than capital loss itself.
+
+BTC price is at $120k all-time high at the time of writing. If you're drawn to investing in Bitcoin now, you're probably attracted by its compelling performance over the past three years, potential to become digital gold and rival gold's market cap, and recently acquired legal legitimacy.
+
+This is a very different mindset from a market downtrend.
+
+In a downtrend, people likely see Bitcoin through several lenses:
+
+BULLETLIST:
+- Bitcoin has no utility compared to a house or bonds/stocks that generate yields or dividends
+- Its only utility is price appreciation, but now it's declining
+- When price drops 30%, a 5% risk-free rate seems very attractive
+- Other investment vehicles capture attention, creating opportunity cost
+
+Suddenly, everything points to selling. At least sell and buy back later.
+
+This is completely different from the mindset most new Bitcoin investors have now. Since people's psychology doesn't change much, this mindset can be triggered when price drops, creating a self-reinforcing loop for negative price action. A bear market becomes likely inevitable.
