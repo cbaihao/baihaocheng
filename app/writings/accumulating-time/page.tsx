@@ -5,7 +5,7 @@ export default function AccumulatingTime() {
   const content = getArticleContent("accumulating-time.txt");
 
   return (
-    <PageLayout title="Accumulating Time">
+    <PageLayout title="Accumulating time" showBackButton>
       <div className="prose prose-gray max-w-none">
         <div className="text-gray-600 text-sm mb-8">July 24, 2025</div>
         <div className="text-gray-700 leading-relaxed space-y-6">

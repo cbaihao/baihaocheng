@@ -5,9 +5,12 @@ export default function BitcoinDCA() {
   const content = getArticleContent("bitcoin-dca.txt");
 
   return (
-    <PageLayout title="The Math behind Bitcoin Dollar Cost Averaging">
+    <PageLayout
+      title="The math behind bitcoin dollar cost averaging"
+      showBackButton
+    >
       <div className="prose prose-gray max-w-none">
-        <div className="text-gray-600 text-sm mb-8">October 2025</div>
+        <div className="text-gray-600 text-sm mb-8">October 23, 2025</div>
         <div className="text-gray-700 leading-relaxed">
           {content.map((section, index) => {
             if (section.type === "paragraph") {

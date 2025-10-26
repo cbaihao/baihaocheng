@@ -9,7 +9,7 @@ export default function Navigation() {
   return (
     <nav>
       <ul className="flex justify-end gap-6 text-[14px]">
-        <li>
+        {/* <li>
           <Link
             href="/progress"
             className={`text-gray-600 hover:text-black ${
@@ -18,8 +18,8 @@ export default function Navigation() {
           >
             Projects
           </Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link
             href="/ideas"
             className={`text-gray-600 hover:text-black ${
@@ -28,7 +28,7 @@ export default function Navigation() {
           >
             Ideas
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             href="/writings"
