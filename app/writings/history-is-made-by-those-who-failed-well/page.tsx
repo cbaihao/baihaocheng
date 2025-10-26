@@ -2,7 +2,7 @@ import PageLayout from "../../components/PageLayout";
 
 export default function HistoryIsMadeByThoseWhoFailedWell() {
   return (
-    <PageLayout title="History is made by those who failed well">
+    <PageLayout title="History is made by those who failed well" showBackButton>
       <div className="text-gray-600 text-sm mb-8">June 30, 2025</div>
 
       <div className="prose prose-gray max-w-none space-y-4">

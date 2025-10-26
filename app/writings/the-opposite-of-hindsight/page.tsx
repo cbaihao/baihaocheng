@@ -2,7 +2,7 @@ import PageLayout from "../../components/PageLayout";
 
 export default function TheOppositeOfHindsight() {
   return (
-    <PageLayout title="The opposite of hindsight">
+    <PageLayout title="The opposite of hindsight" showBackButton>
       <div className="text-gray-600 text-sm mb-8">July 14, 2025</div>
 
       <div className="prose prose-gray max-w-none space-y-4">

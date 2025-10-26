@@ -3,8 +3,8 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
-      title: "The Math behind Bitcoin Dollar Cost Averaging",
-      date: "October 2025",
+      title: "The math behind bitcoin dollar cost averaging",
+      date: "October 23, 2025",
       slug: "bitcoin-dca",
     },
     {
@@ -13,12 +13,12 @@ export default function Writings() {
       slug: "ai-token-arbitrage",
     },
     {
-      title: "Accumulating Time",
+      title: "Accumulating time",
       date: "July 24, 2025",
       slug: "accumulating-time",
     },
     {
-      title: "Wanting, Being, and the Paradox",
+      title: "Wanting, being, and the paradox",
       date: "July 22, 2025",
       slug: "embody-what-you-seek",
     },

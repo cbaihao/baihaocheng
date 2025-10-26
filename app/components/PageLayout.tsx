@@ -1,12 +1,27 @@
+import Link from "next/link";
+
 interface PageLayoutProps {
   title: string;
   children?: React.ReactNode;
+  showBackButton?: boolean;
 }
 
-export default function PageLayout({ title, children }: PageLayoutProps) {
+export default function PageLayout({
+  title,
+  children,
+  showBackButton,
+}: PageLayoutProps) {
   return (
     <main className="w-full">
       <section className="w-full">
+        {showBackButton && (
+          <Link
+            href="/writings"
+            className="text-gray-600 hover:text-black mb-8 inline-block"
+          >
+            &lt; back
+          </Link>
+        )}
         <h1
           className="text-2xl font-bold mb-8 m-0 p-0 leading-tight block relative"
           style={{

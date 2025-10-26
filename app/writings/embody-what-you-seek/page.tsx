@@ -5,7 +5,7 @@ export default function EmbodyWhatYouSeek() {
   const content = getArticleContent("wanting-being-paradox.txt");
 
   return (
-    <PageLayout title="Wanting, Being, and the Paradox">
+    <PageLayout title="Wanting, being, and the paradox" showBackButton>
       <div className="prose prose-gray max-w-none">
         <div className="text-gray-600 text-sm mb-8">July 22, 2025</div>
         <div className="text-gray-700 leading-relaxed space-y-6">
