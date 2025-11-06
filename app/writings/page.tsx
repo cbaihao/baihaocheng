@@ -3,6 +3,11 @@ import PageLayout from "../components/PageLayout";
 export default function Writings() {
   const articles = [
     {
+      title: "State of Being",
+      date: "November 6, 2025",
+      slug: "state-of-being",
+    },
+    {
       title: "The math behind bitcoin dollar cost averaging",
       date: "October 23, 2025",
       slug: "bitcoin-dca",
