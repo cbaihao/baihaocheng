@@ -9,26 +9,16 @@ export default function Navigation() {
   return (
     <nav>
       <ul className="flex justify-end gap-6 text-[14px]">
-        {/* <li>
+        <li>
           <Link
-            href="/progress"
+            href="/projects"
             className={`text-gray-600 hover:text-black ${
-              pathname === "/progress" ? "underline underline-offset-4" : ""
+              pathname === "/projects" ? "underline underline-offset-4" : ""
             }`}
           >
             Projects
           </Link>
-        </li> */}
-        {/* <li>
-          <Link
-            href="/ideas"
-            className={`text-gray-600 hover:text-black ${
-              pathname === "/ideas" ? "underline underline-offset-4" : ""
-            }`}
-          >
-            Ideas
-          </Link>
-        </li> */}
+        </li>
         <li>
           <Link
             href="/writings"
