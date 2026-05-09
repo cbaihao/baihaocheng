@@ -60,9 +60,9 @@ const projects: {
   {
     name: "Coinbase Wallet Social",
     date: "2022",
-    categories: ["Crypto"],
+    categories: ["Crypto", "Wallet"],
     description:
-      "Coinbase Wallet was exploring what social looks like in crypto — if your wallet knew who you followed, it could surface what they hold, what they're watching, what they're moving. I built the graph database backing Twitter-like follow features and cut database load by 40% with Memcached caching. This work was an early step toward what would later evolve into the Base social experience.",
+      <>Transform Coinbase wallet from single player to multi-player.<br />Now becomes Base.</>,
   },
   {
     name: "Himalaya Mentor-In-Pocket",
