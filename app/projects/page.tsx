@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import PageLayout from "../components/PageLayout";
 
 const projects: {
@@ -93,13 +96,19 @@ const projects: {
 
 
 export default function Projects() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <PageLayout title="Projects">
       <ul className="list-none">
-        {projects.map((project) => (
-          <li key={project.name}>
-            <details name="projects" className="group border-b border-gray-100 py-3">
-              <summary className="flex items-center justify-between cursor-pointer list-none">
+        {projects.map((project, i) => {
+          const isOpen = openIndex === i;
+          return (
+            <li key={project.name} className="border-b border-gray-100">
+              <button
+                onClick={() => setOpenIndex(isOpen ? null : i)}
+                className="w-full flex items-center justify-between py-3 cursor-pointer text-left"
+              >
                 <span className="flex items-center gap-3 min-w-0">
                   <span className="text-gray-600 shrink-0">{project.name}</span>
                   <span className="flex items-center gap-1.5 flex-wrap">
@@ -115,13 +124,20 @@ export default function Projects() {
                 </span>
                 <span className="flex items-center gap-4 text-gray-400 text-sm shrink-0 ml-4">
                   <span>{project.date}</span>
-                  <span className="inline-block transition-transform duration-200 group-open:rotate-45">+</span>
+                  <span
+                    className="inline-block transition-transform duration-200"
+                    style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+                  >
+                    +
+                  </span>
                 </span>
-              </summary>
-              <p className="mt-3 text-gray-600">{project.description}</p>
-            </details>
-          </li>
-        ))}
+              </button>
+              {isOpen && (
+                <p className="pb-3 text-gray-600">{project.description}</p>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </PageLayout>
   );
