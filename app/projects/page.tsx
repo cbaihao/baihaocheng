@@ -3,11 +3,13 @@ import PageLayout from "../components/PageLayout";
 const projects: {
   name: string;
   date: string;
+  categories: string[];
   description: React.ReactNode;
 }[] = [
   {
     name: "Circle Payment Network",
     date: "2025–2026",
+    categories: ["Stablecoin", "Payment"],
     description: (
       <>
         Built the first version of{" "}
@@ -28,6 +30,7 @@ const projects: {
   {
     name: "LegalCrypto.ai",
     date: "2025",
+    categories: ["Crypto"],
     description: (
       <>
         Figuring out crypto regulations typically means $500–$1,000/hour in
@@ -47,24 +50,28 @@ const projects: {
   {
     name: "USDC Access Network",
     date: "2023–2024",
+    categories: ["Stablecoin", "Payment"],
     description:
-      "In March 2023, SVB collapsed and USDC briefly traded at $0.90 on some DEXs, triggering widespread depeg fears. I joined Circle's newly formed liquidity team shortly after. The mission: keep USDC pegged at $1 under any market condition — expanding Circle's banking network, deepening CEX integrations, and building onramp/offramp rails across local currencies. USDC Access is Circle's first retail-facing onramp product: Circle stays outside the flow of funds for regulatory reasons, but users get a unified experience with a curated set of vetted providers.",
+      "In March 2023, SVB collapsed and USDC briefly traded at $0.90 on some DEXs over the weekend. I became a founding member on Circle's newly formed liquidity team. The goal is to keep USDC pegged at $1 under any market condition — expanding banking network, deepening CEX liquidity, and building onramp/offramp rails. USDC Access is Circle's first retail-facing onramp product: it maintains the regulatory bar that set Circle apart while users get a trusted and unified experience for onramp.",
   },
   {
     name: "Coinbase Wallet Social",
     date: "2022",
+    categories: ["Crypto"],
     description:
       "Coinbase Wallet was exploring what social looks like in crypto — if your wallet knew who you followed, it could surface what they hold, what they're watching, what they're moving. I built the graph database backing Twitter-like follow features and cut database load by 40% with Memcached caching. This work was an early step toward what would later evolve into the Base social experience.",
   },
   {
     name: "Himalaya Mentor-In-Pocket",
     date: "2021",
+    categories: ["Consumer"],
     description:
       "The insight: all fields are pushed forward by people, and we learn fastest from their stories. After listening to hundreds of podcasts, we built an audio product that puts a mentor in your pocket — curated stories from founders, investors, and operators. Grew from zero to $500K ARR and 1M signups. The mentor feature became the most popular in the app.",
   },
   {
     name: "DECODE Innovation",
     date: "2019",
+    categories: ["Nonprofit", "Conference"],
     description: (
       <>
         Co-founded{" "}
@@ -84,6 +91,7 @@ const projects: {
   },
 ];
 
+
 export default function Projects() {
   return (
     <PageLayout title="Projects">
@@ -92,7 +100,19 @@ export default function Projects() {
           <li key={project.name}>
             <details name="projects" className="group border-b border-gray-100 py-3">
               <summary className="flex items-center justify-between cursor-pointer list-none">
-                <span className="text-gray-600">{project.name}</span>
+                <span className="flex items-center gap-3 min-w-0">
+                  <span className="text-gray-600 shrink-0">{project.name}</span>
+                  <span className="flex items-center gap-1.5 flex-wrap">
+                    {project.categories.map((cat) => (
+                      <span
+                        key={cat}
+                        className="text-xs text-gray-500 bg-gray-100 border border-gray-500 px-1.5 py-0.5 rounded"
+                      >
+                        {cat}
+                      </span>
+                    ))}
+                  </span>
+                </span>
                 <span className="flex items-center gap-4 text-gray-400 text-sm shrink-0 ml-4">
                   <span>{project.date}</span>
                   <span className="inline-block transition-transform duration-200 group-open:rotate-45">+</span>
