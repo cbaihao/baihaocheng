@@ -85,7 +85,7 @@ const projects: {
           UC Berkeley&apos;s annual tech and entrepreneurship conference
         </a>
         . Hosted Eric Yuan (Zoom CEO), Michael Seibel (YC CEO), Astro Teller
-        (Google X CEO), Steve Jurvetson (Founders Fund, Tesla board), and
+        (Google X CEO), Steve Jurvetson (Board member of SpaceX, Tesla. Partner DFJ), and
         Aparna Chennapragada (Robinhood CPO) across 4 events with 2,000+ total
         attendees. Also launched two student-run courses counting toward
         Berkeley&apos;s Entrepreneurship certificate.
